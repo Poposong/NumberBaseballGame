@@ -23,7 +23,7 @@ public class Main {
             System.out.println("[숫자 야구 게임]");
             System.out.println(">>>> 컴퓨터가 숫자를 뽑겠다.");
 
-            RandomNumber computer = new RandomNumber();
+            RandomNumber computer = new RandomNumber(3);
 
             computer.setRandomNumber();
 

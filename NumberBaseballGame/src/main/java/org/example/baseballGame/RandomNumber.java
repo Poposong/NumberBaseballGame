@@ -6,21 +6,21 @@ import java.util.Random;
 public class RandomNumber {
     private int[] randomNumber;
 
-    public RandomNumber(){
-        randomNumber = new int[3];
+    public RandomNumber(int size) {
+        randomNumber = new int[size];
     }
 
-    public int[] getRandomNumber(){
+    public int[] getRandomNumber() {
         return this.randomNumber;
     }
 
-    public void setRandomNumber(){
+    public void setRandomNumber() {
         boolean[] visited = new boolean[10]; // 서로 다른 3자리의 숫자를 만들기 위해 중복을 확인하기 위한 배열
         Arrays.fill(visited, false);
 
-        for(int i = 0; i < 3; i++) {
+        for (int i = 0; i < randomNumber.length; i++) {
             int choiceNumber = choiceOneRandomNumber();
-            if(!visited[choiceNumber]){
+            if (!visited[choiceNumber]) {
                 randomNumber[i] = choiceNumber;
                 visited[choiceNumber] = true;
                 continue;
@@ -30,7 +30,7 @@ public class RandomNumber {
     }
 
     // 랜덤으로 1~9 사이의 숫자를 뽑는 메서드
-    private int choiceOneRandomNumber(){
+    private int choiceOneRandomNumber() {
         return new Random().nextInt(9) + 1;
     }
 }
