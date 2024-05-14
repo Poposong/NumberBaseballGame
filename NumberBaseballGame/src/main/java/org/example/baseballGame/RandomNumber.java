@@ -29,7 +29,7 @@ public class RandomNumber {
         }
     }
 
-    // 랜덤으로 1~9 사이의 숫자를 뽑는 메서드
+    // 랜덤으로 1~9 사이의 숫자를 뽑는 함수
     private int choiceOneRandomNumber() {
         return new Random().nextInt(9) + 1;
     }
