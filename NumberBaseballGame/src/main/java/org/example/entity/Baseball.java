@@ -1,27 +1,28 @@
-package org.example.baseballGame;
+package org.example.entity;
 
 import java.util.Arrays;
 import java.util.Random;
 
-public class RandomNumber {
-    private int[] randomNumber;
 
-    public RandomNumber(int size) {
-        randomNumber = new int[size];
+public class Baseball {
+    private int[] position;
+
+    public Baseball(int ballNum) {
+        position = new int[ballNum];
     }
 
     public int[] getRandomNumber() {
-        return this.randomNumber;
+        return this.position;
     }
 
     public void setRandomNumber() {
         boolean[] visited = new boolean[10]; // 서로 다른 3자리의 숫자를 만들기 위해 중복을 확인하기 위한 배열
         Arrays.fill(visited, false);
 
-        for (int i = 0; i < randomNumber.length; i++) {
+        for (int i = 0; i < position.length; i++) {
             int choiceNumber = choiceOneRandomNumber();
             if (!visited[choiceNumber]) {
-                randomNumber[i] = choiceNumber;
+                position[i] = choiceNumber;
                 visited[choiceNumber] = true;
                 continue;
             }
