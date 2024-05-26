@@ -51,10 +51,10 @@ public class BaseballGame {
     // 컴퓨터가 랜덤으로 ballNum자리의 숫자를 뽑는 함수
     private int[] computerTurn(int ballNum) {
         resultView.displayGameStartMessage();
-        return choiceComputerNumber(ballNum); // 컴퓨터가 뽑은 숫자
-//        int[] computerNumber = choiceComputerNumber(ballNum); // 컴퓨터가 뽑은 숫자
-//        System.out.println("컴퓨터가 뽑은 숫자: " + StringUtil.arrayToStr(computerNumber, ballNum));
-//        return computerNumber;
+//        return choiceComputerNumber(ballNum); // 컴퓨터가 뽑은 숫자
+        int[] computerNumber = choiceComputerNumber(ballNum); // 컴퓨터가 뽑은 숫자
+        System.out.println("컴퓨터가 뽑은 숫자: " + StringUtil.arrayToStr(computerNumber, ballNum));
+        return computerNumber;
     }
 
     // 랜덤으로 숫자를 뽑는 함수
@@ -65,7 +65,7 @@ public class BaseballGame {
     }
 
     // 컴퓨터의 숫자와 사용자의 숫자를 비교해서 스트라이크와 볼의 수를 계산하는 함수
-    private int[] baseballGameResult(int[] computerNumber, int[] userNumber) {
+    public int[] baseballGameResult(int[] computerNumber, int[] userNumber) {
         int size = computerNumber.length;
         int[] strikeAndBallCount = new int[2]; // [0]: STRIKE, [1]: BALL
 
